@@ -3,6 +3,9 @@ var bird;
 var pipes = [];
 var frame = 1;
 var score = 0;
+var pipeCount = 0;
+var levelup = false;
+var speed = 2;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -19,6 +22,7 @@ function draw() {
 	fill(175);
 	text(score,width/2,height/2);
  	bird.show();
+
 	if(bird.started){
 		frame++;
 		bird.update();
@@ -28,6 +32,7 @@ function draw() {
 
 			if(pipes[i].offscreen()){
 				pipes.splice(i,1);
+				pipeCount++;
 			}
 
 			if(bird.die(pipes[i])){
@@ -39,15 +44,16 @@ function draw() {
 
 		}
 
-		if(frame % 100 == 0){
+
+
+		if(frame % 100/speed == 0){
 			pipes.push(new Pipe());
 		}
 	}
-	console.log(score);
 }
 
 function keyPressed(){
-	if(keyCode = 32){
+	if(keyCode == 32){
 		bird.started = true;
 		bird.flap();
 	}

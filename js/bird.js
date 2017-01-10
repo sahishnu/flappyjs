@@ -31,7 +31,6 @@ function Bird(){
 		}else{
 			return false;
 		}
-
 	}
 
 	this.flap = function(){
@@ -44,6 +43,7 @@ function Bird(){
 		this.gravity = 0.6;
 		this.started = false;
 		score = 0;
+		speed = 2;
 	}
 
 	this.scoreCheck = function(pipe){
