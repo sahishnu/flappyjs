@@ -61,13 +61,12 @@ function draw() {
 			pipes[i].show();
 			pipes[i].update();
 
-			if(pipes[i].offscreen()){
-				pipes.splice(i,1);
+			if(pipes[0].offscreen()){
+				pipes.splice(0,1);
 			}
 
 			if(bird.die(pipes[i])){
 				sendScore(total);
-				console.log("total", total );
 				pipes = [];
 			}else if(pipes.length != 0){
 				pipes[i].point();
