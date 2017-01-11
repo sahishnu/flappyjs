@@ -3,7 +3,6 @@ var bird;
 var pipes = [];
 var frame = 1;
 var score = 0;
-var pipeCount = 0;
 var levelup = false;
 var speed = 2;
 var database;
@@ -64,7 +63,6 @@ function draw() {
 
 			if(pipes[i].offscreen()){
 				pipes.splice(i,1);
-				pipeCount++;
 			}
 
 			if(bird.die(pipes[i])){
@@ -122,7 +120,7 @@ function gotData(data){
 	var user = document.getElementsByClassName('user-name')[0];
 	var highestscore = document.getElementsByClassName('user-score')[0];
 	var birdskilled = document.getElementsByClassName('birds-killed-number')[0];
-	user.innerHTML = name;
+	user.innerHTML = username;
 	highestscore.innerHTML = highscore;
 	birdskilled.innerHTML = keys.length;
 }
