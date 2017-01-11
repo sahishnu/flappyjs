@@ -61,22 +61,28 @@ function draw() {
 			pipes[i].show();
 			pipes[i].update();
 
-			if(pipes[0].offscreen()){
+			if(pipes[i].offscreen()){
 				pipes.splice(0,1);
+			}
+
+			if(pipes[i].newpipe()){
+				pipes.push(new Pipe());
 			}
 
 			if(bird.die(pipes[i])){
 				sendScore(total);
+				total = 0;
 				pipes = [];
 			}else if(pipes.length != 0){
 				pipes[i].point();
 			}
 
 		}
-
+		/*
 		if(frame % 100/2*speed == 0){
 			pipes.push(new Pipe());
 		}
+		*/
 	}
 }
 
