@@ -3,8 +3,8 @@ function Pipe(){
 	this.top = random(0,2*height/3);
 	this.space = random(3*r, 10*r);
 	this.bottom = this.top + this.space;
-	this.w = 3*r/2;
-	this.x = width - this.w;
+	this.w = 4*r/3;
+	this.x = width + this.w;
 	this.scored = false;
 
 	this.show = function(x){
@@ -23,6 +23,7 @@ function Pipe(){
 			this.scored = true;
 			score++;
 			if(score % 5 == 0){
+				//speed = lerp(speed, speed+1, 0.5)
 				speed++;
 			}
 		}

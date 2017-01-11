@@ -99,7 +99,7 @@ input {
     right: 6vw;
 }
 
-.snakes-killed-number, .snakes-killed-text {
+.birds-killed-number, .birds-killed-text {
     top: 3vh;
     right: 6vw;
     color: darkgrey;
@@ -193,5 +193,3 @@ input {
     top: 82px;
     right: 0px;
 }
-
-

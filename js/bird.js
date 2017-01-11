@@ -23,8 +23,8 @@ function Bird(){
 		if(this.pos.y - r > height || this.pos.y + r < 0){
 			this.reset();
 			return true;
-		}else if(this.pos.y  < pipe.top || this.pos.y > pipe.bottom){
-			if(this.pos.x > pipe.x && this.pos.x < pipe.x + pipe.w){
+		}else if(pipes.length != 0){
+			if((this.pos.y  < pipe.top || this.pos.y > pipe.bottom)&&(this.pos.x > pipe.x && this.pos.x < pipe.x + pipe.w)){
 				this.reset();
 				return true;
 			}
@@ -38,6 +38,9 @@ function Bird(){
 	}
 
 	this.reset = function(){
+		if(score > total){
+			total = score;
+		}
 		this.pos.y = height/2;
 		this.velocity = 0;
 		this.gravity = 0.6;
