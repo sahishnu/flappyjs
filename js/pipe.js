@@ -36,7 +36,7 @@ function Pipe(){
 			return false;
 		}
 	}
-
+	//this didnt update?
 	this.newpipe = function(){
 		if(this.x < 2*width/3 && !this.pastmid){
 			this.pastmid = true;
