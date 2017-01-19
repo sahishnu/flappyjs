@@ -55,7 +55,6 @@ function draw() {
  	bird.show();
 
 	if(bird.started && modalup){
-		frame++;
 		bird.update();
 		for(var i = 0; i < pipes.length; i++){
 			pipes[i].show();
@@ -73,16 +72,12 @@ function draw() {
 				sendScore(total);
 				total = 0;
 				pipes = [];
+				pipes.push(new Pipe());
 			}else if(pipes.length != 0){
 				pipes[i].point();
 			}
 
 		}
-		/*
-		if(frame % 100/2*speed == 0){
-			pipes.push(new Pipe());
-		}
-		*/
 	}
 }
 
